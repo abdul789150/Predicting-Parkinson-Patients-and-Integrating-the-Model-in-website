@@ -1,0 +1,108 @@
+{% extends 'parkinson_app/master_layout.html' %}
+
+{% block titleContent %}
+    <title>Edit Profile</title>
+{% endblock %}
+
+{% block mainContent %}
+<div class="container d-flex justify-content-center">
+
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="mt-2 mb-5">
+            <div class="main-container d-flex shadow" style="height: 570px;">
+                <div class="col-lg-12">
+                    <div class="container" style="color: #04174F;">
+                        <div class="mt-5">
+                            <div style="text-align: center;">
+                                <h3>
+                                    <strong>
+                                        Complete Profile
+                                    </strong>
+                                </h3>
+                            </div>
+                            <div>
+                                <span>
+                                    Please provide all the required information!
+                                </span>
+                            </div>
+                            <div class="mt-5" style="font-size: small;">
+                                <form method="POST" action="{% url 'parkinson_app:complete_profile' %}">
+                                    {% csrf_token %}
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for="" style="font-weight: 600;">Full Name</label>
+                                                <input type="text" class="form-control custom-input-styling" placeholder="" name="full_name" value="{{ user.full_name }}" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for="" style="font-weight: 600;">Email</label>
+                                                <input type="email" class="form-control custom-input-styling" name="email" value="{{ user.email }}" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row mt-3">
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for="" style="font-weight: 600;">Phone No.</label>
+                                                <input type="text" class="form-control custom-input-styling" name="phone_number" value="{{ user.phone_number }}" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for="" style="font-weight: 600;">Gender</label>
+                                                <br>
+                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                    <label class="btn btn-light active">
+                                                      <input type="radio" name="gender-option" id="option1" autocomplete="off" checked value="Male" disabled> Male
+                                                    </label>
+                                                    <label class="btn btn-light">
+                                                      <input type="radio" name="gender-option" id="option3" autocomplete="off" value="Female" disabled> Female
+                                                    </label>
+                                                </div>                                                  
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row mt-3">
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for="" style="font-weight: 600;">Age</label>
+                                                <input type="text" class="form-control custom-input-styling" name="age" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for=""> <span style="font-weight: 600;">Height</span>(In cm)</label>
+                                                <input type="text" class="form-control custom-input-styling" name="height" value="" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row mt-3">
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for=""><span style="font-weight: 600;">Weight</span>(In kg)</label>
+                                                <input type="text" class="form-control custom-input-styling" name="weight" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <button type="submit" class="btn1 btn-primary1" style="font-size: small;">Complete Profile</button>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

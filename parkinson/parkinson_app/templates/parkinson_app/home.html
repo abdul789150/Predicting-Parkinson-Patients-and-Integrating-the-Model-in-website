@@ -1,0 +1,380 @@
+{% extends 'parkinson_app/master_layout.html' %}
+{% load static %}
+
+{% block titleContent %}
+    <title>Home</title>
+{% endblock %}
+
+{% block mainContent %}
+
+<div class="col-lg-12 col-md-12 col-sm-12">
+
+    <div class="row mt-4">
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="col-lg-11">
+                <div class="previous-result-heading">
+                    Previous Test Result
+                </div>
+
+                <div class="previous-result-body shadow-sm">
+                    <div class="top d-flex">
+                        <div style="font-size: 1.5rem; font-weight: 600; width: 30%;">
+                            <div class="pl-3 pt-3">
+                                {% if test_result.result == 1%}
+                                    <span class="text-danger">
+                                        Positive Test Result
+                                    </span>    
+                                {% elif test_result.result == 0 %}
+                                    <span class="text-success">
+                                        Negative Test Result
+                                    </span>    
+                                {% else %}
+                                    <span class="text-success">
+                                        No Test Result Found!
+                                    </span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% if test_result %}
+                        <div class="" style="width: 50%; text-align: center;">
+                            <div class="pt-3" style="line-height: 2.7rem; font-size: small; color: gray;">
+                                Test Date: <strong>{{test_result.test_date.date}}</strong> 
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% if test_result %}
+                    <div class="mid">
+                        <div class="pl-3 pt-2">
+                            <h6>
+                                <strong>
+                                    Details        
+                                </strong>
+                                <span>
+                                </span>
+                            </h6>
+                        
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">Jitter percentage(%): </strong>
+                                                <div>
+                                                    <span class="ml-2">
+                                                        {{test_result.Jitter_percentage}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">Jitter Absolute: </strong>
+                                                <div>
+                                                    <span class="ml-5">
+                                                        {{test_result.Jitter_absolute}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">Jitter DDP: </strong>
+                                                <div style="margin-left: 29%;">
+                                                    <span class="">
+                                                        {{test_result.Jitter_ddp}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">MDVP AVQ: </strong>
+                                                <div style="margin-left: 25%;">
+                                                    <span class="">
+                                                        {{test_result.mdvp_avq}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">Shimmer DDA: </strong>
+                                                <div style="margin-left: 18%;">
+                                                    <span class="">
+                                                        {{test_result.shimmer_dda}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">RPDE: </strong>
+                                                <div style="margin-left: 41%;">
+                                                    <span >
+                                                        {{test_result.rpde}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">MDVP PPQ: </strong>
+                                                <div style="margin-left: 25%;">
+                                                    <span class="ml-2">
+                                                        {{test_result.mdvp_ppq}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">MDVP RAP: </strong>
+                                                <div style="margin-left: 25%;">
+                                                    <span class="ml-2">
+                                                        {{test_result.mdvp_rap}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">MDVP Shimmer: </strong>
+                                                <div style="margin-left: 13%;">
+                                                    <span class="ml-2">
+                                                        {{test_result.mdvp_shimmer}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">D2: </strong>
+                                                <div style="margin-left: 48%;">
+                                                    <span class="ml-2">
+                                                        {{test_result.d2}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">NHR: </strong>
+                                                <div style="margin-left: 43%;">
+                                                    <span class="ml-2">
+                                                        {{test_result.nhr}}
+                                                    </span>
+                                                    
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">MDVP Shimmer(dB): </strong>
+                                                <div>
+                                                    <span class="ml-2">
+                                                        {{test_result.mdvp_shimmer_db}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">Shimmer APQ3: </strong>
+                                                <div style="margin-left: 13%;">
+                                                    <span class="ml-2">
+                                                        {{test_result.shimmer_apq3}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">Shimmer APQ5: </strong>
+                                                <div style="margin-left: 13%;">
+                                                    <span class="ml-2">
+                                                        {{test_result.shimmer_apq5}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">Spread 2: </strong>
+                                                <div style="margin-left: 31%;">
+                                                    <span class="ml-2">
+                                                        {{test_result.spread_2}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <strong style="color: gray;">PPE: </strong>
+                                                <div style="margin-left: 44%;">
+                                                    <span class="ml-2">
+                                                        {{test_result.ppe}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="profile-div shadow">
+                <div class="profile-pic-div" style="width: 100px; height: 100px;">
+                    <label for="file" class="" style="height: 100%;">
+                        <img src="{{ user.profile_img.url }}" alt="" class="rounded-circle" style="width: 100%; height: 100%;">
+                    </label>
+                    <input type="file" name="file" id="file" class="inputfileProfile" />
+                </div>
+                <!-- <div class="img-div" style="width: 100px; height: 100px;">
+                    <img src="{% static 'parkinson_app/assets/first-step.jpg' %}" alt="" class="profile-img" style="width: 100%; height: 100%;">
+                </div> -->
+
+                <div class="info-div">
+                    <div class="mt-3">
+                        <span style="font-weight: 600;">{{user.full_name}}</span>
+                        <br>
+                        <span>{{user.email}}</span>
+                        <br>
+                        <span>{{user.phone_number}}</span>
+                        <br>
+                        <a href="{% url 'parkinson_app:edit_profile' %}" style="color: gray; text-decoration: none;">
+                            Edit Profile
+                        </a>
+                    </div>
+                    <div class="mt-3">
+                        <table>
+                            <tbody>
+                                <tr style="line-height: 1.5rem; height: 30px;">
+                                    <td>Age</td>
+                                    <td class="pl-4" style="font-size: 1.45rem; font-weight: 600;">{{user.age}}</td>
+                                </tr>
+                                <tr style="line-height: 1.5rem; height: 30px;">
+                                    <div class="mt-3">
+                                        <td>Gender</td>
+                                        <td class="pl-4" style="font-size: 1.45rem; font-weight: 600;">{{user.gender}}</td>
+                                    </div>
+                                </tr>
+                                <tr style="line-height: 1.5rem; height: 30px;">
+                                    <div class="mt-3">
+                                        <td>Height</td>
+                                        <td class="pl-4" style="font-size: 1.45rem; font-weight: 600;">{{user.height}}cm</td>
+                                    </div>
+                                </tr>
+                                <tr style="line-height: 1.5rem; height: 30px;">
+                                    <div class="mt-3">
+                                        <td>Weight</td>
+                                        <td class="pl-4" style="font-size: 1.45rem; font-weight: 600;">{{user.weight}}kg</td>
+                                    </div>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<div class="modal fade" id="uploadImageModal" tabindex="-1" role="dialog" aria-labelledby="uploadImageModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="uploadImageModalTitle">Upload Profile Picture</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="">
+                <div id="image_upload" style="width: 100%; height: 350px;"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="text-center">
+                <button class="btn btn-blue crop_image">Upload Image</button>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block scriptContent %}
+<script>
+
+    $image_crop = $('#image_upload').croppie({
+        enableExif: true,
+        enforceBoundary: true,
+        showZommer: false,
+        viewport: {
+            width:250,
+            height:250,
+            type:'circle' //circle
+        },
+        boundary:{
+            height: 300,
+        }
+    });
+
+    $('#file').on('change', function(){
+        var reader = new FileReader();
+        reader.onload = function (event) {
+        $image_crop.croppie('bind', {
+            url: event.target.result
+        }).then(function(){
+            console.log('jQuery bind complete');
+        });
+        }
+        reader.readAsDataURL(this.files[0]);
+        $('#uploadImageModal').modal('show');
+    });
+
+    $('.crop_image').click(function(event){
+        $image_crop.croppie('result', {
+        type: 'canvas',
+        size: 'viewport'
+        }).then(function(response){
+            $.ajax({
+                url:"{% url 'parkinson_app:upload_profile_pic' %}",
+                type: "POST",
+                data:{"image": response},
+                success:function(data)
+                {
+                    $('#uploadImageModal').modal('hide');
+                }
+            });
+        })
+    });
+</script>
+{% endblock %}
+
+
+

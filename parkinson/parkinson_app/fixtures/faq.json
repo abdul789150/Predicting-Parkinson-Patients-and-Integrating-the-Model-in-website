@@ -1,0 +1,78 @@
+[
+    {
+        "model" : "parkinson_app.FAQ",
+        "fields" : {
+            "id":"1",
+            "question":"What is this website for?",
+            "answer":"This website is a visual presentation of a Machine Learning Model to detect and classify Parkinson patient.",
+            "topic_id":"1"
+        }
+    },
+    {
+        "model" : "parkinson_app.FAQ",
+        "fields" : {
+            "id":"2",
+            "question":"What is Parkinson Disease?",
+            "answer":"Parkinson's disease is a progressive nervous system disorder that affects movement. Symptoms start gradually, sometimes starting with a bearly noticeable tremor in just one hand. Tremors are common, but the disorder also commonly causes stiffness or slowing of movement.",
+            "topic_id":"1"
+        }
+    },
+    {
+        "model" : "parkinson_app.FAQ",
+        "fields" : {
+            "id":"3",
+            "question":"What is jitter and shimmer?",
+            "answer":"Jitter and shimmer are the two common perturbation measures in acoustic\r\nanalysis. Jitter is a measure of frequency instability, while shimmer is a measure of amplitude instability. A normal voice has a small amount of instability during sustained vowel production. Normal instabilities are influences by tissue and muscle properties. Large variations in perturbation values signal increased instability at the source(laryngeal) level. Ratio of noise component to harmonic component yields information on\r\nthe ability of the individual to coordinate source and filter acoustics. Perturbation measures vary between children and adults, and may vary among professional voice users. ",
+            "topic_id":"3"
+        }
+    },
+    {
+        "model" : "parkinson_app.FAQ",
+        "fields" : {
+            "id":"4",
+            "question":"What is Jitter(local, absolute)?",
+            "answer":"This is the average absolute difference between consecutive periods, in seconds.\r\nMDVP calls this parameter Jita, and gives 83.200 μs as a threshold for pathology. As this number was based on jitter measurements influenced by noise (see Voice 5. Comparison with other programs), the correct threshold is probably lower.\r\n",
+            "topic_id":"3"
+        }
+    },
+    {
+        "model" : "parkinson_app.FAQ",
+        "fields" : {
+            "id":"5",
+            "question":"What is Jitter (rap)?",
+            "answer":"This is the Relative Average Perturbation, the average absolute difference between a period and the average of it and its two neighbours, divided by the average period.\r\n\r\nMDVP gives 0.680% as a threshold for pathology. As this number was based on jitter measurements influenced by noise (see Voice 5. Comparison with other programs), the correct threshold is probably lower.",
+            "topic_id":"3" 
+        }        
+    },
+        
+
+    {
+        "model" : "parkinson_app.FAQ",
+        "fields" : {
+            "id":"6",
+            "question":"What is Jitter (ppq5)?",
+            "answer":"This is the five-point Period Perturbation Quotient, the average absolute difference between a period and the average of it and its four closest neighbours, divided by the average period.\r\nMDVP calls this parameter PPQ, and gives 0.840% as a threshold for pathology; as this number was based on jitter measurements influenced by noise (see Voice 5. Comparison with other programs), the correct threshold is probably lower.",
+            "topic_id":"3"
+        }
+    },
+    {
+        "model" : "parkinson_app.FAQ",
+        "fields" : {
+            "id":"7",
+            "question":"What is Jitter (ddp)?",
+            "answer":"This is the average absolute difference between consecutive differences between consecutive periods, divided by the average period.\r\nThis is Praat's original Get jitter. The value is three times RAP.",
+            "topic_id":"3"
+        }
+
+    },
+
+    {
+        "model" : "parkinson_app.FAQ",
+        "fields" : {
+            "id":"8",
+            "question":"What is PRAAT?",
+            "answer":"This is a freeware program for the analysis and reconstruction of acoustic\r\nspeech signals. The software can be downloaded from the following website:\r\nhttp:\/\/www.fon.hum.uva.nl\/praat\/. \r\nYou can find a best tutorial for here(https:\/\/web.stanford.edu\/dept\/linguistics\/corpora\/material\/PRAAT_workshop_manual_v421.pdf) ",
+            "topic_id":"3"
+        }
+    }
+]

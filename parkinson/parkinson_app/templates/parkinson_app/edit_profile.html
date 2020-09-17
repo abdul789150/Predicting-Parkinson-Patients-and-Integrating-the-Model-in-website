@@ -1,0 +1,154 @@
+{% extends 'parkinson_app/master_layout.html' %}
+
+{% block titleContent %}
+    <title>Edit Profile</title>
+{% endblock %}
+
+{% block mainContent %}
+<div class="container d-flex justify-content-center">
+
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="mt-2 mb-5">
+            <div class="main-container d-flex shadow" style="height: 550px;">
+                <div class="col-lg-12">
+                    <div class="container" style="color: #04174F;">
+                        <div class="mt-5">
+                            <div style="text-align: center;">
+                                <h3>
+                                    <strong>
+                                        Edit Profile
+                                    </strong>
+                                </h3>
+                            </div>
+                            <div class="mt-5" style="font-size: small;">
+                                <form method="POST" action="{% url 'parkinson_app:edit_profile' %}">
+                                    {% csrf_token %}
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for="" style="font-weight: 600;">Full Name</label>
+                                                <input type="text" class="form-control custom-input-styling" placeholder="" name="full_name" value="{{ user.full_name }}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for="" style="font-weight: 600;">Email</label>
+                                                <input type="email" class="form-control custom-input-styling" name="email" value="{{ user.email }}" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row mt-3">
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for="" style="font-weight: 600;">Phone No.</label>
+                                                <input type="text" class="form-control custom-input-styling" name="phone_number" value="{{ user.phone_number }}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for="" style="font-weight: 600;">Gender</label>
+                                                <br>
+                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                    <label class="btn btn-light active">
+                                                      <input type="radio" name="gender" id="option1" autocomplete="off" checked value="Male"> Male
+                                                    </label>
+                                                    <label class="btn btn-light">
+                                                      <input type="radio" name="gender" id="option3" autocomplete="off" value="Female"> Female
+                                                    </label>
+                                                </div>                                                  
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row mt-3">
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for="" style="font-weight: 600;">Age</label>
+                                                <input type="text" class="form-control custom-input-styling" name="age" value="{{ user.age }}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for="" style="font-weight: 600;">Height</label>
+                                                <input type="text" class="form-control custom-input-styling" name="height" value="{{ user.height }}" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row mt-3">
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for="" style="font-weight: 600;">Weight</label>
+                                                <input type="text" class="form-control custom-input-styling" name="weight" value="{{ user.weight }}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <button type="submit" class="btn1 btn-primary1" style="font-size: small;">Edit Profile</button>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOR PASSWORD -->
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="mt-2 mb-5">
+            <div class="main-container d-flex shadow" style="height: 550px;">
+                <div class="col-lg-12">
+                    <div class="container" style="color: #04174F;">
+                        <div class="mt-5">
+                            <div style="text-align: center;">
+                                <h3>
+                                    <strong>
+                                        Update Password
+                                    </strong>
+                                </h3>
+                            </div>
+                            <div class="mt-5" style="font-size: small;">
+                                <form method="POST" action="{% url 'parkinson_app:signup' %}">
+                                    {% csrf_token %}
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for="" style="font-weight: 600;">New Password</label>
+                                                <input type="password" class="form-control custom-input-styling" placeholder="Enter your new password" name="password" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row mt-3">
+                                        <div class="col">
+                                            <div style="width: 90%;">
+                                                <label for="" style="font-weight: 600;">Confirm Password</label>
+                                                <input type="password" class="form-control custom-input-styling" name="confirm_password" placeholder="Please Confirm your password" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+ 
+                                    <div class="mt-4">
+                                        <button type="submit" class="btn1 btn-primary1" style="font-size: small;">Update Password</button>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--  -->
+</div>
+
+
+{% endblock %}

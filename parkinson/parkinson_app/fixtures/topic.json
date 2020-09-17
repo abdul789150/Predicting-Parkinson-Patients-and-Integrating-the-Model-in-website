@@ -1,0 +1,15 @@
+[
+    {
+        "model" : "parkinson_app.Topic",
+        "fields" : {
+            "name" : "General"
+        }
+    },
+    {
+        "model" : "parkinson_app.Topic",
+        "fields" : {
+            "name" : "Test Variables"
+        }
+    }
+
+]

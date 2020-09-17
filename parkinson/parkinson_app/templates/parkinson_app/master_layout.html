@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block titleContent %}
+  {% endblock %}
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'parkinson_app/css/bootstrap.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'parkinson_app/css/custom.css' %}" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.8/cropper.css" integrity="sha512-vkRxMWM09+6Se3e5Hzn9IPY5NnY50+1w6WQq5MKOEGO0eGM7o9Ilk6Km09dmdWaX9D9iKm8KHg9ngi7+sP0vbg==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{% static 'parkinson_app/css/croppie.css' %}" type="text/css">
+  
+
+</head>
+<body>
+
+  <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="{% url 'parkinson_app:landing_page' %}">
+          <div>
+              <img src="{% static 'parkinson_app/assets/navbar-icon.jpg' %}" alt="" srcset="">
+              <span style="margin-left: -12%;">Parkinson <strong>Prediction</strong></span>     
+          </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'parkinson_app:what_is_parkinson' %}">What is Parkinson<span class="sr-only">(current)</span></a>
+          </li>
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'parkinson_app:home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'parkinson_app:new_test' %}">New Test</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'parkinson_app:edit_profile' %}">Edit Profile</a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'parkinson_app:login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'parkinson_app:signup' %}">Sign up</a>
+            </li>
+          {% endif %}
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'parkinson_app:faq' %}">FAQ</a>
+          </li>
+
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'parkinson_app:logout' %}">Logout</a>
+            </li>
+          {% endif %}
+          <!-- new test -->
+          <!-- edit profile -->
+        </ul>
+      </div>
+    </nav>
+
+    {% block mainContent %}
+    {% endblock %}
+
+    <!-- Loading Scripts -->
+    <script src="{% static 'parkinson_app/js/popper.min.js' %}"></script>
+    <script src="{% static 'parkinson_app/js/jquery.js' %}"></script>
+    <script src="{% static 'parkinson_app/js/bootstrap.min.js' %}"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.8/cropper.js" integrity="sha512-rpUBM/uw+q8crQfTCszyx2ePbgGxg7mxqkyDOzydvKSx3RBT5N3OhQY4lRVEuHGGCs1EJFQazje7Dw9MKzoMKA==" crossorigin="anonymous"></script> -->
+    <script src="{% static 'parkinson_app/js/croppie.js' %}"></script>
+
+    {% block scriptContent %}
+    {% endblock %}
+
+</body>
+</html>

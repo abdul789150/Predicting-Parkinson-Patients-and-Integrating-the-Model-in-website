@@ -1,0 +1,477 @@
+body{
+    color: #04174F;
+    font-family: 'Nunito', sans-serif;
+}
+
+.landing-page-top-container{
+    display:block;
+    position: relative;
+    background:url("/static/parkinson_app/assets/landing-page-top-container.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    width:99%;
+    height:640px;
+    margin-left: 1%;
+}
+.landing-page-top-container .heading-div,
+.what_is_park_top_container .heading-div{
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 1%;
+}
+
+.landing-page-top-container .heading,
+.what_is_park_top_container .heading{
+    color: #04174F;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.landing-page-top-container .heading-text,
+.what_is_park_top_container .heading-text{
+    color: #04174F;
+    width: 500px;
+    margin-left: 1%;
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.landing-page-top-container .btn-div{
+    margin-left: 1%;
+    margin-top: 2%;
+}
+
+
+.btn1 {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.5rem 2.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn1:hover {
+    color: #212529;
+    text-decoration: none;
+}
+  
+.btn1:focus, .btn1.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+  
+.btn1.disabled, .btn1:disabled {
+    opacity: 0.65;
+}
+  
+.btn1:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+  
+a.btn1.disabled,
+fieldset:disabled a.btn1 {
+    pointer-events: none;
+}
+
+
+
+.btn-primary1 {
+    color: #fff;
+    background-color: #04174F;
+    border-color: #04174F;
+}
+
+.btn-primary1:hover {
+    color: #fff;
+    background-color: rgb(4, 31, 112);
+    border-color: rgb(4, 31, 112);
+}
+
+.btn-primary1:focus, .btn-primary1.focus {
+    color: #fff;
+    background-color: rgb(4, 31, 112);
+    border-color: rgb(4, 31, 112);
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
+
+.btn-primary1.disabled, .btn-primary1:disabled {
+    color: #fff;
+    background-color: rgb(4, 31, 112);
+    border-color: rgb(4, 31, 112);
+}
+
+.btn-primary1:not(:disabled):not(.disabled):active, .btn-primary1:not(:disabled):not(.disabled).active,
+.show > .btn-primary1.dropdown-toggle {
+    color: #fff;
+    background-color: rgb(4, 31, 112);
+    border-color: rgb(4, 31, 112);
+}
+
+.btn-primary1:not(:disabled):not(.disabled):active:focus, .btn-primary1:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary1.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
+
+
+.main-container{
+    border-radius: 0.75rem;
+}
+
+.color-side-signup{
+    position: relative;
+    background-color: #04174F;
+    color: white;
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+}
+
+.color-side-login{
+    position: relative;
+    background-color: #04174F;
+    color: white;
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.custom-input-styling{
+    background-color: #F5F6F8;
+    border: none;
+    color: #04174F;
+    width: 100%;
+}
+
+/* What is parkinson disease page */
+.what_is_park_top_container{
+    display:block;
+    position: relative;
+    background:url("/static/parkinson_app/assets/what_is_parkinson_top_container.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    width:99%;
+    height:640px;
+    margin-left: 1%;
+}
+
+.what_is_park_third_container{
+    display: block;
+    position: relative;
+    background:url("/static/parkinson_app/assets/what_is_third_container.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    width:100%;
+    height:430px;
+    margin-left: 2%;
+}
+
+.what_is_park_fourth_container{
+    height: 410px;
+    margin-top: 8%;
+}
+
+.what_is_park_fourth_container .img-div{
+    display: block;
+    position: relative;
+    background:url("/static/parkinson_app/assets/what_is_fourth_container.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    width:90%;
+    float: right;
+    height:410px;
+    margin-left: 1%;
+}
+
+.what_is_park_fourth_container .img-div .text-heading{
+    width: 30%;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-left: 45%;
+    margin-top: 3%;
+}
+
+.what_is_park_fifth_container{
+    margin-top: 14%;
+    height: 700px;
+}
+
+.what_is_park_fifth_container .img-div{
+    display: block;
+    position: relative;
+    background:url("/static/parkinson_app/assets/what_is_fifth_container.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    width:100%;
+    float: right;
+    height:700px;
+    margin-left: 1%;
+}
+
+.what_is_park_fifth_container .img-div .text-heading{
+    width: 30%;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 0.5%;
+    margin-left: 2%;
+}
+
+.what_is_park_sixth_container{
+    height: 400px;
+    margin-top: 12%;
+}
+
+.what_is_park_sixth_container .img-div{
+    display: block;
+    position: relative;
+    background:url("/static/parkinson_app/assets/what_is_sixth_container.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    width:80%;
+    float: right;
+    height:400px;
+    margin-left: 1%;
+}
+
+.what_is_park_sixth_container .img-div .text-heading{
+    width: 30%;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-left: 47%;
+    margin-top: 3%;
+}
+
+
+.landing-page-second-container{
+    height: 400px;
+    margin-top: 8%;
+}
+
+.landing-page-second-container .img-div{
+    display: block;
+    position: relative;
+    background:url("/static/parkinson_app/assets/landing-page-second-container.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    width:80%;
+    float: right;
+    height:400px;
+    margin-left: 1%;
+}
+.how-it-works-div{
+    position: relative;
+    /* bottom: 0; */
+    margin-top: 5%;
+    margin-left: 2%;
+}
+
+.how-it-works-div .single-div{
+    position: relative;
+    background-color: #ECEFFE;
+    height: 350px;
+    border-radius: 0.95rem;
+}
+
+.step-img-corners{
+    border-radius: 0.75rem;
+}
+
+.img-div .text-heading{
+    width: 30%;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+.img-div .text-body{
+    width: 50%;
+    margin-left: 40%;
+}
+
+.what_is_park_second_container{
+    height: 500px;
+    margin-top: 8%;
+}
+
+
+.what_is_park_second_container .img-div{
+    display: block;
+    position: relative;
+    background:url("/static/parkinson_app/assets/what_is_second_container.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    width:85%;
+    float: right;
+    height:500px;
+    margin-left: 1%;
+}
+
+.what_is_park_second_container .img-div .text-heading{
+    width: 30%;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-left: 45%;
+    margin-top: 3%;
+}
+
+.what_is_park_third_container_heading{
+    width: 30%;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 9%;
+    margin-left: 2%;
+}
+
+.profile-div{
+    background-color: #FAFAFA;
+    height: 500px;
+    border-radius: .90rem;
+}
+
+.profile-div{
+    /* border-radius: 2rem; */
+    padding-top: 10%;
+    padding-left: 8%;
+}
+
+.profile-img{
+    border-radius: 5rem;
+}
+
+.previous-result-heading{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 1.333333%;
+}
+
+.previous-result-body{
+    background-color: #F5F9F8;
+    height: 350px;
+    margin-top: 2%;
+    border-radius: 0.8rem;
+}
+
+.model-statistics-card{
+    background-color: #2B304D;
+    height: 350px;
+    border-radius: 0.75rem;
+}
+
+.model-statistics-card-heading{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-top: 4%;
+}
+
+.model-statistics-card-item-heading{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.test-inputs-heading{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-top: 1%;
+}
+
+.aside
+{
+    position:fixed;
+    height: 100%;
+    top: 30%;
+    /* color: gray; */
+}
+
+aside ul
+{
+    position: absolute;
+    height: 200px;
+    color: gray;
+}
+
+.faq-list-a,
+.faq-list-a:hover,
+.faq-list-a:focus{
+    text-decoration: none !important;
+    color: gray;
+}
+
+.faq-heading{
+    font-size: 2.3rem;
+    font-weight: 600;
+    text-align: center;
+    /* color: rgb(95, 95, 95); */
+}
+
+.faq-card{
+    /* height: 30px; */
+    border-radius: 0.5rem;
+}
+
+.faq-card-heading{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.inputfile {
+    width: 1px;
+	/* width: 0.1px;
+	height: 0.1px; */
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label {
+    height: 40px;
+    width: 100%;
+    margin-top: 8px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 14px;
+    /* font-weight: 700; */
+    border-radius: .3rem;
+    color: black;
+    background-color: white;
+    border-color: white;
+    display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: rgb(243, 243, 243);
+}
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfileProfile{
+    width: 1px;
+    height: 1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+

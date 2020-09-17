@@ -1,0 +1,231 @@
+{% extends 'parkinson_app/master_layout.html' %}
+
+{% block titleContent %}
+    <title>New Test</title>
+{% endblock %}
+
+{% block mainContent %}
+
+<div class="col-lg-12 col-md-12 col-sm-12 row">
+    <div class="col-lg-3">
+        <div class="model-statistics-card-heading">
+            Model Statistics
+        </div>
+        <div class="model-statistics-card">
+            <ul class="list-unstyled pl-3 pt-4" style="color: white">
+                <li>
+                    <span class="model-statistics-card-item-heading">Training Accuracy</span>
+                    <br>
+                    <span>81.35%</span>
+                </li>
+                <li class="mt-4">
+                    <span class="model-statistics-card-item-heading">Testing Accuracy</span>
+                    <br>
+                    <span>82.35%</span>
+                </li>
+                <li class="mt-4">
+                    <span class="model-statistics-card-item-heading">Model Prediction</span>
+                    <br>
+                    {% if final_pred %}
+                        <span>{{ final_pred }}</span>
+                    {% else %}
+                        <span>Please Fill up all fields!</span>
+                    {% endif %}
+
+                </li>
+            </ul>
+        </div>
+    </div>    
+    <div class="col-lg-9">
+        <div class="">
+            <div class="">
+                <div class="test-inputs-heading">
+                    Model Prediction
+                </div>
+                <div class="test-input-fields mt-3">
+                    <div style="font-weight: 600; line-height: 1.2;" >
+                        <span>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                                        <span class="text-danger">
+                                            Please answer all the questions, so then the model will be able to 
+                                            predict about your condition.
+                                        </span>            
+                                    {% endif %}
+                                {% endfor %}
+                            {% else %}
+                                Please answer all the questions, so then the model will be able to 
+                                predict about your condition.
+                            {% endif %}
+
+                            <br>
+                            All questions are relevent to your speech.
+                        </span>
+                    </div>
+                    <div class="mt-3" style="">
+                        <form method="POST" action="{% url 'parkinson_app:new_test' %}">
+                            {% csrf_token %}
+                            <div class="question1">
+                                <span>
+                                    Q1. Please provide the variation in fundamental frequency:
+                                </span>
+                                <div class="form-row mt-2">
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">Jitter percentage(%)</label>
+                                            <input type="text" class="form-control custom-input-styling" placeholder="" name="jitter_per">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">Jitter Absolute</label>
+                                            <input type="text" class="form-control custom-input-styling" name="jitter_abs">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">Jitter DDP</label>
+                                            <input type="text" class="form-control custom-input-styling" placeholder="" name="jitter_ddp">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row mt-2">
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">MDVP PPQ</label>
+                                            <input type="text" class="form-control custom-input-styling" placeholder="" name="mdvp_ppq">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">MDVP RAP</label>
+                                            <input type="text" class="form-control custom-input-styling" name="mdvp_rap">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question2 mt-4">
+                                <span>
+                                    Q2. Please provide the several measures of variation in amplitude:
+                                </span>
+                                <div class="form-row mt-2">
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">MDVP Shimmer</label>
+                                            <input type="text" class="form-control custom-input-styling" placeholder="" name="mdvp_shimmer">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">MDVP Shimmer(dB)</label>
+                                            <input type="text" class="form-control custom-input-styling" name="mdvp_shimmer_db">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">Shimmer APQ3</label>
+                                            <input type="text" class="form-control custom-input-styling" name="shimmer_apq3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row mt-2">
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">Shimmer APQ5</label>
+                                            <input type="text" class="form-control custom-input-styling" name="shimmer_apq5">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">MDVP AVQ</label>
+                                            <input type="text" class="form-control custom-input-styling" name="mvp_avq">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">Shimmer DDA</label>
+                                            <input type="text" class="form-control custom-input-styling" name="shimmer_dda">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question3 mt-4">
+                                <span>
+                                    Q3. Please provide the two non-linear dynamical complexity measures:
+                                </span>
+                                <div class="form-row mt-2">
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">RPDE</label>
+                                            <input type="text" class="form-control custom-input-styling" name="rpde">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">D2</label>
+                                            <input type="text" class="form-control custom-input-styling" name="d2">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question4 mt-4">
+                                <span>
+                                    Q4. Please provide the measure of ratio of noise to tonal components in the voice status:
+                                </span>
+                                <div class="form-row mt-2">
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">NHR</label>
+                                            <input type="text" class="form-control custom-input-styling" name="nhr">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                    </div>
+                                    <div class="col">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question5 mt-4">
+                                <span>
+                                    Q5. Please provide measures of fundamental frequency variation:
+                                </span>
+                                <div class="form-row mt-2">
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">Spread 2</label>
+                                            <input type="text" class="form-control custom-input-styling" name="spread2">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div style="width: 90%;">
+                                            <label for="" style="">PPE</label>
+                                            <input type="text" class="form-control custom-input-styling" name="ppe">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <button class="btn1 btn-primary1">Calculate Result</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-5">
+<div class="pt-5">
+
+</div>
+</div>
+
+{% endblock %}

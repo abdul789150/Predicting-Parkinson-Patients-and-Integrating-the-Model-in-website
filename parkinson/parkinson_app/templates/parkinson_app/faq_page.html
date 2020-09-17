@@ -1,0 +1,97 @@
+{% extends 'parkinson_app/master_layout.html' %}
+{% load static %}
+
+{% block titleContent %}
+    <title>FAQ</title>
+{% endblock %}
+
+{% block mainContent %}
+
+<div class="col-lg-12 row">
+    <div class="col-lg-3">
+        <div class="aside">
+            <h4 style="font-weight: 600;">Table of Contents</h4>
+            <ul class="list-unstyled">
+                <li>
+                    <a class="faq-list-a" href="#" id="general-faqs">{{topics.0.title}}</a>
+                </li>                
+                <li>
+                    <a class="faq-list-a" href="#" id="ml-model-faqs">{{topics.1.title}}</a>
+                </li>                
+
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-9">
+        <div class="container">
+            <div class="faq-heading">
+                Frequently Asked Questions
+            </div>
+            <div class="help-text" style="color: gray; text-align: center;">
+                Can't find any answer? Email us at help@example.com
+            </div>
+            <div class="faq-body mt-5">
+                {% for topic in topics %}
+                    {% if topic.title == "General" %}
+                        <div class="col-lg-10" id="gen-block">
+                        {% for faq in topic.faq_set.all %}
+                            <div class="mt-4">
+                                <div class="faq-card shadow mt-4">
+                                    <div class="faq-card-heading pl-3 pt-3 pr-3">
+                                        {{faq.question}}
+                                    </div>
+                                    <div class="pl-3 pb-3 pr-3">
+                                        {{faq.answer}}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="col-lg-10" id="ml-block">
+                        {% for faq in topic.faq_set.all %}
+                            <div class="mt-4">
+                                <div class="faq-card shadow mt-4">
+                                    <div class="faq-card-heading pl-3 pt-3 pr-3">
+                                        {{faq.question}}
+                                    </div>
+                                    <div class="pl-3 pb-3 pr-3">
+                                        {{faq.answer}}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    {% endif %}
+                    
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block scriptContent %}
+
+    <script>
+
+        var general_faqs = document.getElementById('general-faqs')
+        var ml_model_faqs = document.getElementById('ml-model-faqs')
+
+        general_faqs.addEventListener("click", function(){
+            document.getElementById('gen-block').style.display = 'block'
+            document.getElementById('ml-block').style.display = 'none'
+        })
+
+        ml_model_faqs.addEventListener("click", function(){
+            document.getElementById('ml-block').style.display = 'block'
+            document.getElementById('gen-block').style.display = 'none'
+        })
+
+
+    </script>
+
+{% endblock %}

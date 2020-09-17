@@ -1,0 +1,111 @@
+{% extends 'parkinson_app/master_layout.html' %}
+{% load static %}
+
+{% block titleContent %}
+    <title>Parkinson Prediction</title>
+{% endblock %}
+
+{% block mainContent %}
+
+<div class="">
+
+    <div class="landing-page-top-container">
+        <div class="heading-div">
+            <span class="heading">
+                <strong>
+                    Parkinson Disease <br> Classification 
+                </strong>
+            </span>
+            <br>
+            <div class="heading-text">
+                By the help of Machine Learning here you will find important details about your disease
+                and you will find much more important details. 
+            </div>
+            <div class="btn-div row">
+                <a href="{% url 'parkinson_app:signup' %}" class="btn1 btn-primary1">Get Started</a>
+                <a href="{% url 'parkinson_app:what_is_parkinson' %}" class="btn1 btn-light" style="margin-left: 2%;">Learn More</a>
+            </div>      
+        </div>
+    </div>
+
+    <div class="landing-page-second-container">
+        <div class="img-div">
+            <div class="text-heading">
+                Deep Learning Model for Classification
+            </div>
+            <div class="text-body">
+                For the classification of Parkinson disease, we have used Neural Networks as our
+                Machine Learning model. Neural Networks are very much popular in machine learning.
+                They are best for complex classification and very much used for other things too. 
+            </div>
+        </div>
+    </div>
+
+    <div class="how-it-works-div" style="margin-top: 8%; margin-bottom: 8%;">
+        <div>
+            <h1>How It Works</h1>
+            <div class="col-lg-12 col-md-12 d-flex mb-5" style="width: 90%;">
+                <div class="col-lg-4 col-md-4 single-div">
+                    <div class="d-flex justify-content-center mt-5">
+                        <div class="step-img-corners">
+                            <img src="{% static 'parkinson_app/assets/first-step.jpg' %}" alt="" srcset="" class="step-img-corners">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3">
+                        <h4><strong>Survey Questions</strong></h4>
+                    </div>
+                    <div class="d-flex justify-content-center" style="font-size: 0.90rem;">
+                        <p class="mt-2" style="width: 75%; text-align: center;">
+                            A number of questions will be asked from you regarding your vocal frequency,
+                            then the data will be passed on to our model as input, by the help of which 
+                            it will classify if you are suffering from Parkinson disease or not.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 single-div ml-5">
+                    <div class="d-flex justify-content-center mt-5">
+                        <div>
+                            <img src="{% static 'parkinson_app/assets/second-step.jpg' %}" alt="" srcset="" class="step-img-corners">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3">
+                        <h4><strong>Trained Model</strong></h4>
+                    </div>
+                    <div class="d-flex justify-content-center" style="font-size: 0.90rem;">
+                        <p class="mt-2" style="width: 75%; text-align: center;">
+                            We have a pre-trained model, in this model we will pass the collected
+                            answers, and then this model will classify if the user is suffering from
+                            disease or not.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 single-div ml-5">
+                    <div class="d-flex justify-content-center mt-5">
+                        <div>
+                            <img src="{% static 'parkinson_app/assets/third-step.jpg' %}" alt="" srcset="" class="step-img-corners">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3">
+                        <h4><strong>Result</strong></h4>
+                    </div>
+                    <div class="d-flex justify-content-center" style="font-size: 0.90rem;">
+                        <p class="mt-2" style="width: 75%; text-align: center;">
+                            In the end you will get visulaizations about your health results.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer" style="background-color: #04174F; color: white;">
+    <div class="p-2 ml-5">
+        <h5 class="mt-2">
+            Parkinson Predictions
+        </h5>
+    </div>
+</div>
+{% endblock %}
